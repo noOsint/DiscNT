@@ -1,147 +1,170 @@
-# DisCum
-![version](https://img.shields.io/badge/github%20version-1.4.1-blue) [![python versions](https://img.shields.io/badge/python-2.7%20%7C%203.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue)](https://github.com/Merubokkusu/Discord-S.C.U.M)       
-[![PyPI version](https://badge.fury.io/py/discum.svg)](https://badge.fury.io/py/discum) [![python versions](https://img.shields.io/badge/python-2.7%20%7C%203.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-green)](https://pypi.org/project/discum)      
-A simple, easy to use, non-restrictive, synchronous Discord API Wrapper for Selfbots/Userbots written in Python.       
--using requests and websockets :)
+# DiscNT - Previously Discum (DISCORD-S.C.U.M)
+A simple, easy-to-use, non-restrictive, synchronous Discord API Wrapper for Selfbots/Userbots written in Python.
 
-![https://files.catbox.moe/3ns003.png](https://files.catbox.moe/3ns003.png)
-        
-### Currently don't have time to maintain this project.      
-I might edit from time to time. Feel free to fork the repo and make your own edits.
-For another python library that's currently better maintained, I'd recommend the following (asynchronous) lib: https://github.com/dolfies/discord.py-self           
-Happy coding,         
-\- arandomnewaccount                  
-##### *** risky actions: [issue #66](https://github.com/Merubokkusu/Discord-S.C.U.M/issues/66#issue-876713938)
+### ⚠️ **Risky Actions**: [Issue #66](https://github.com/noOsint/DiscNT/issues/66#issue-876713938)
 
-## Table of Contents
-- [Key Features](#Key-features)
-- [About](#About)
-- [Installation](#Installation)
+---
+
+## 📌 Table of Contents
+- [Key Features](#key-features)
+- [About](#about)
+- [Installation](#installation)
   - [Prerequisites](#prerequisites-installed-automatically-using-above-methods)
-- [Documentation](#Documentation)
-- [Contributing](#Contributing)
-- [Example Usage](#Example-usage)
-- [Links](#Links)
-- [Checklist](#Checklist)
-- [Contributing](#Contributing)
-- [FAQ](#FAQ)
-- [Notes](#Notes)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Example Usage](#example-usage)
+- [Links](#links)
+- [FAQ](#faq)
+- [Notes](#notes)
 
-## Key features
-- easy-to-use (make selfbots/userbots)
-- easy-to-extend/edit (add api wrappers)
-- readable (organized 😃 )
-- mimics the client while giving you control
-- all api wraps point to user/"private" apis
-- on-event (gateway) capabilities
-- [extremely customizable fetchMembers function](docs/using/fetchingGuildMembers.md)
-- remote authentication functions
-- support for python 2.7
+---
 
-## About
-  Discum is a Discord self/userbot api wrapper (in case you didn't know, self/userbotting = automating a user account). Whenever you login to discord, your client communicates with Discord's servers using Discord's http api (http(s) requests) and gateway server (websockets). Discum allows you have this communication with Discord using python. 
-  
-  The main difference between Discum and other Discord api wrapper libraries (like discord.py) is that discum is written and maintained to work on user accounts (so, perfect for selfbots/userbots). We test code on here and develop discum to be readable, expandable, and useable. Functions that are risky to use are clearly stated as such in the docs.    
-  
-  Note, using a selfbot is against Discord's Terms of Service and you could get banned for using one if you're not careful. Also, this needs to be said: discum does not have rate limit handling. The main reasons for this are that discum is made to (1) be (relatively) simple and (2) give the developer/user freedom with how to handle the rate limits. We (Merubokkusu and anewrandomaccount) do not take any responsibility for any consequences you might face while using discum. We also do not take any responsibility for any damage caused (to servers/channels) through the use of Discum. Discum is a tool; how you use this tool is on you.
+## 🚀 Key Features
+- ✅ Easy-to-use for selfbots/userbots
+- 🔧 Simple to extend and modify
+- 📖 Readable and well-organized
+- 🎭 Mimics the official client while providing full control
+- 🔍 Uses user/private APIs
+- 🔄 Supports event-based (gateway) interactions
+- 🔬 [Highly customizable `fetchMembers` function](docs/using/fetchingGuildMembers.md)
+- 📡 Remote authentication capabilities
+- 🐍 **Supports Python 2.7** (but Python 3+ recommended)
 
-## Installation  
-To install the library normally, run:
+---
+
+## ℹ️ About
+**DiscNT** is a Discord API wrapper designed specifically for selfbots and userbots. It provides an interface to interact with Discord's **HTTP API** (requests) and **Gateway API** (websockets) just like the official client.
+
+Unlike traditional libraries like `discord.py`, DiscNT is **built specifically for user accounts** and offers direct access to private APIs. This makes it an ideal tool for those looking to automate and extend their Discord experience.
+
+⚠️ **Warning:** Using a selfbot is against Discord's Terms of Service and may result in a ban if not used carefully. **DiscNT does not include built-in rate limit handling** to ensure simplicity and give users full control. The developers are **not responsible** for any consequences resulting from the use of this tool.
+
+---
+
+## 🔧 Installation  
+To install DiscNT, run:
 ```
-python -m pip install --user --upgrade git+https://github.com/Merubokkusu/Discord-S.C.U.M.git#egg=discum
-```
-Otherwise, to also use remote authentication functions (login using a phone & qr code), run:
-```
-python -m pip install --user --upgrade -e git+https://github.com/Merubokkusu/Discord-S.C.U.M.git#egg=discum[ra]
+python -m pip install --user --upgrade git+https://github.com/noOsint/DiscNT.git#egg=discum
 ```
 
-#### Prerequisites (installed automatically using above methods)
-- requests
-- requests_toolbelt
-- brotli
-- websocket_client==0.59.0
-- filetype
-- ua-parser
-- colorama
+For additional **remote authentication functions** (login using phone & QR code), install with:
+```
+python -m pip install --user --upgrade -e git+https://github.com/noOsint/DiscNT.git#egg=discum[ra]
+```
 
-remote auth prerequisites (if you install discum[ra]):       
-- pyqrcode
-- pycryptodome
-- pypng
+### 📦 Prerequisites (installed automatically)
+- `requests`
+- `requests_toolbelt`
+- `brotli`
+- `websocket_client==0.59.0`
+- `filetype`
+- `ua-parser`
+- `colorama`
 
-## Documentation
-[https://github.com/Merubokkusu/Discord-S.C.U.M/tree/master/docs](docs)
+#### 🔑 Remote Authentication Prerequisites
+(If installing with `[ra]` flag)
+- `pyqrcode`
+- `pycryptodome`
+- `pypng`
 
-## Contributing
-Contributions are welcome. You can submit issues, make pull requests, or suggest features. Ofc not all suggestions will be implemented (because discum is intended to be a transparent, relatively-raw discord user api wrapper), but all suggestions will be looked into.        
-Please see the [contribution guidelines](https://github.com/Merubokkusu/Discord-S.C.U.M/blob/master/contributing.md)
+---
 
-# Example usage
-```python
-import discum     
-bot = discum.Client(token='420tokentokentokentoken.token.tokentokentokentokentoken', log=False)
+## 📚 Documentation
+📖 [Read the Docs](https://github.com/noOsint/DiscNT/tree/master/docs)
 
-bot.sendMessage("238323948859439", "Hello :)")
+---
+
+## 🤝 Contributing
+We welcome contributions! You can:
+- Report issues 🐞
+- Submit pull requests 🔀
+- Suggest new features 💡
+
+Not all suggestions may be implemented, as **DiscNT aims to remain a transparent and raw Discord user API wrapper**. See our [contribution guidelines](https://github.com/noOsint/DiscNT/blob/master/contributing.md) for details.
+
+---
+
+## 📝 Example Usage
+Basic example:
+```
+import discum
+
+TOKEN = "USER_TOKEN"
+CHANNEL_ID = "CHANNEL_ID"
+
+bot = discum.Client(token=TOKEN, log=False)
+
+
+def send_message(channel_id: str, message: str) -> None:
+    """Sends a message to the specified Discord channel."""
+    bot.sendMessage(channel_id, message)
+
 
 @bot.gateway.command
-def helloworld(resp):
-    if resp.event.ready_supplemental: #ready_supplemental is sent after ready
+def handle_gateway_events(resp) -> None:
+    """Handles events from the Discord Gateway."""
+    if resp.event.ready_supplemental:  # Triggered after the ready event
         user = bot.gateway.session.user
-        print("Logged in as {}#{}".format(user['username'], user['discriminator']))
-    if resp.event.message:
-        m = resp.parsed.auto()
-        guildID = m['guild_id'] if 'guild_id' in m else None #because DMs are technically channels too
-        channelID = m['channel_id']
-        username = m['author']['username']
-        discriminator = m['author']['discriminator']
-        content = m['content']
-        print("> guild {} channel {} | {}#{}: {}".format(guildID, channelID, username, discriminator, content))
+        print(f"Logged in as {user['username']}#{user['discriminator']}")
 
-bot.gateway.run(auto_reconnect=True)
+    if resp.event.message:
+        message_data = resp.parsed.auto()
+        guild_id = message_data.get("guild_id", "DM")
+        channel_id = message_data["channel_id"]
+        username = message_data["author"]["username"]
+        discriminator = message_data["author"]["discriminator"]
+        content = message_data["content"]
+
+        print(f"> Guild {guild_id} | Channel {channel_id} | {username}#{discriminator}: {content}")
+
+
+if __name__ == "__main__":
+    send_message(CHANNEL_ID, "Hello, world!")
+    bot.gateway.run(auto_reconnect=True)
 ```
 
-# Links
-[Documentation](docs)      
-[More examples](examples)      
-[Changelog](changelog.md)      
-[GitHub](https://github.com/Merubokkusu/Discord-S.C.U.M)      
-[PyPi](https://pypi.org/project/discum/)      
+---
 
-# Checklist
-- [x] Sending basic text messages
-- [X] Sending Images
-- [x] Sending Embeds
-- [X] Sending Requests (Friends etc)
-- [X] Profile Editing (Name,Status,Avatar)
-- [X] On-Message (and other on-anything gateway) capabilities
-- [X] Getting guild members
-- [X] improve documentation
-- [X] add interactions (slash command triggering, buttons, and dropdowns/menus)
-- [ ] add more guild http api wraps
-- [ ] media (voice & video calls, along with the various discord games/activites)
-- [ ] Everything
+## 🔗 Links
+- 📖 [Documentation](docs)  
+- 💡 [More Examples](examples)  
+- 📝 [Changelog](changelog.md)  
+- 🔗 [GitHub Repository](https://github.com/noOsint/DiscNT)  
 
-## FAQ
-Q: Why am I getting Attribute Errors?          
-A: Most likely you've installed discum through pip, which is not always updated. To get the most recent version, install through github. For gateway.session related errors, you need to connect to the gateway at least once to receive session data.    
+---
 
-Q: Does discum support BOT accounts?         
-A: No. Discum only supports user accounts.      
+## ❓ FAQ
 
-Q: What's the difference between user/private API and BOT API?      
-A: User APIs are run by the official client. Many of these are not documented by discord. On the other hand, BOT APIs are run by BOT accounts and are documented by discord. Discum only consists of user APIs.    
+#### ❓ Does DiscNT support bot accounts?  
+**No.** DiscNT only supports **user accounts**.
 
-Q: How to fix "\[SSL: CERTIFICATE_VERIFY_FAILED]" errors?      
-A: https://stackoverflow.com/a/53310545/14776493       
+#### ❓ What's the difference between user/private API and bot API?  
+- **User APIs** are used by the official Discord client and are mostly undocumented.  
+- **Bot APIs** are used by bot accounts and are publicly documented.  
+**DiscNT exclusively uses user APIs.**
 
-Q: I'm getting ```KeyError: 'members'``` when running ```bot.gateway.session.guild(guild_ID).members```. Why?      
-A: KeyErrors happened on previous versions where the "members" key was not set until you ran ```bot.gateway.fetchMembers(...); bot.gateway.run()```. Due to this causing some confusion, the latest versions do not display this KeyError (instead, the value of "members" is an empty dictionary to start with). Of course, you still have to fetch the members (a gateway operation) in order to get the members.
+#### ❓ How do I fix `[SSL: CERTIFICATE_VERIFY_FAILED]` errors?  
+Check out this solution: [StackOverflow](https://stackoverflow.com/a/53310545/14776493)
 
-Q: ```import _brotli ImportError: DLL load failed: The specified module could not be found.``` How to fix?       
-A: https://github.com/google/brotli/issues/782        
-     
-Q: ```The owner of this website (discord.com) has banned your access based on your browser's signature...```. How to fix?        
-A: This is because of your user agent (https://stackoverflow.com/a/24914742/14776493). Either try again or reinitialize your client with a new user agent.       
-    
-## Notes
-In recent years, token logging has become more common (as many people don't check code before they run it). I've seen many closed-source selfbots, and while surely some are well intentioned, others not so much. Discum (discord api wrapper) is open-sourced and organized to provide transparency, but even so, we encourage you to look at the code. Not only will looking at the code help you to better understand how discord's api is structured, but it'll also let you know exactly what you're running. If you have questions about Discum (after looking at the docs & previous issues), free to ask us.
+#### ❓ Why am I getting `KeyError: 'members'` when running `bot.gateway.session.guild(guild_ID).members`?  
+This occurred in older versions where the `members` key wasn't set until you manually fetched them using:  
+```
+bot.gateway.fetchMembers(...); bot.gateway.run()
+```
+The latest version now initializes `members` as an empty dictionary by default.
+
+#### ❓ How to fix `ImportError: DLL load failed: The specified module could not be found` for `_brotli`?  
+Check out: [Google Brotli Issue #782](https://github.com/google/brotli/issues/782)
+
+#### ❓ "The owner of this website (discord.com) has banned your access based on your browser's signature..."  
+This is likely due to your **user agent**. Try again with a different one: [StackOverflow](https://stackoverflow.com/a/24914742/14776493)
+
+---
+
+## 📝 Notes
+With the rise of token logging, **always review the code before running it**. While many closed-source selfbots exist, **DiscNT remains open-source for full transparency**.  
+Understanding DiscNT's code **not only helps with security but also enhances your knowledge of Discord's API**.
+
+If you have questions after reading the documentation and previous issues, feel free to ask!
+
+---
